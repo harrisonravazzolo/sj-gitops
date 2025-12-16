@@ -19,7 +19,11 @@ org_settings:
     host_expiry_enabled: true
     host_expiry_window: 30
   org_info:
-    org_name: Fleet
+    org_name: Harry's House 🏠
+  webhook_settings:
+    activities_webhook:
+      enable_activities_webhook: true
+      destination_url: https://webhook.site/43fc3dc1-b777-4bf8-a797-f0f9ce193fe1
   secrets:
     - secret: "$FLEET_GLOBAL_ENROLL_SECRET"
   features:
