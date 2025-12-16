@@ -12,6 +12,7 @@ policies:
   - path: ../lib/macos/policies/macos-device-health.policies.yml
   - path: ../lib/windows/policies/windows-device-health.policies.yml
   - path: ../lib/linux/policies/linux-device-health.policies.yml
+  - path: ../lib/windows/policies/all-windows-updates-installed.policies.yml
 queries:
   - path: ../lib/all/queries/collect-usb-devices.queries.yml
 agent_options:
@@ -35,6 +36,13 @@ controls:
 team_settings:
   secrets:
     - secret: "$FLEET_ENGINEERING_ENROLL_SECRET"
+  webhook_settings:
+    failing_policies_webhook:
+      enable_failing_policies_webhook: true
+      destination_url: https://webhook.site/43fc3dc1-b777-4bf8-a797-f0f9ce193fe1
+      host_batch_size: 0
+      policy_ids:
+        - 2618
   features:
     enable_host_users: true
     enable_software_inventory: true
